@@ -12,7 +12,7 @@ const product = require("./models/product");
 const multer = require('multer')          
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './uploads')
+    cb(null, '/uploads')
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now()
@@ -34,9 +34,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 
-app.get('/', (req, res) => {
-  res.send("Api is working");
-});
+// app.get('/', (req, res) => {
+//   res.send("Api is working");
+// });
 
 
 // to upload a product in the database
