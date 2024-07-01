@@ -34,9 +34,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, './public'));
-// });
+app.get('/', (req, res) => {
+  res.send("Api is working");
+});
 
 
 // to upload a product in the database
