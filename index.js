@@ -3,7 +3,6 @@ const cors = require("cors")
 connectToMongo();
 
 const express = require('express');
-const path = require("path");
 const product = require("./models/product");
 
 
@@ -12,7 +11,7 @@ const product = require("./models/product");
 const multer = require('multer')          
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, '/uploads')
+    cb(null, '/uploads') 
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now()
@@ -65,7 +64,6 @@ app.post('/api/products/upload', upload.single('productImage'), async (req, res)
 // get list of all products
 app.get('/api/products/details', async (req, res) => {
   try {
-
     const products = await product.find();
     res.status(200).json(products);
 
